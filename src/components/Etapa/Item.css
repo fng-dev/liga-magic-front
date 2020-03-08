@@ -1,0 +1,8 @@
+.line-item{
+    padding: 0px !important;
+}
+
+.line-item .box-title{
+    padding: 5px;
+    background: #424248;
+}

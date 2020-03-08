@@ -1,14 +1,32 @@
 import React, { Component } from "react";
 import './Player.css';
+import Item from './Item';
+import { Row, Col, Button } from 'react-materialize';
 
-class Player extends Component
-{
+class Player extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            etapa_id: 0,
+            players: [
+                {
+                    id:0,
+                    name:'Franco Nascimento',
+                    dci:'1234562252',
+                    email:'email@email.com',
+                },
+                {
+                    id:0,
+                    name:'Marcos Vinicius',
+                    dci:'1234562252',
+                    email:'email@email.com',
+                }
+            ]
+        };
     }
 
     render() {
+        const { players } = this.state;
         return (
             <div className='container-fluid'>
                 <div className='box'>
@@ -18,7 +36,32 @@ class Player extends Component
                             Player
                         </span>
                     </div>
-                    <div className='box-content'>Content</div>
+                    <div className='box-content'>
+                        <Row>
+                            <Col s={12} style={{ textAlign: 'right' }}>
+                                <Button
+                                    node="button"
+                                    style={{
+                                        background: '#23232e',
+                                        marginTop: '15px'
+                                    }}
+                                    waves="light"
+                                >Novo Player </Button>
+                            </Col>
+                        </Row>
+                        {
+                            players.map((item) => {
+                                return (
+                                    <Item
+                                        name={item.name}
+                                        dci={item.dci}
+                                        email={item.email}
+                                        key={item.key}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         )

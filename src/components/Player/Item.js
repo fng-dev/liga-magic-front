@@ -10,7 +10,7 @@ class Item extends Component
     }
 
     render() {
-        const { name, start } = this.props;
+        const { name, dci, email } = this.props;
         return (
             <div className='line-item'>
                 <Row>
@@ -18,7 +18,10 @@ class Item extends Component
                         Nome: { name }
                     </Col>
                     <Col s={12} style={{ marginTop: '20px'}}>
-                        Inicio: { start }
+                        DCI: { dci }
+                    </Col>
+                    <Col s={12} style={{ marginTop: '20px'}}>
+                        Email: { email }
                     </Col>
                 </Row>
             </div>

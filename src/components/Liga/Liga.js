@@ -7,10 +7,24 @@ class Liga extends Component
 {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            ligas: [
+                {
+                    id:0,
+                    name:'Liga Modern 2 Semestre 2019',
+                    start:'2020-10-05',
+                },
+                {
+                    id:1,
+                    name:'Liga Modern 1 Semestre 2020',
+                    start:'2020-10-05',
+                }
+            ]
+        };
     }
 
     render() {
+        const { ligas } = this.state;
         return (
             <div className='container-fluid'>
                 <div className='box'>
@@ -20,39 +34,32 @@ class Liga extends Component
                             Liga
                         </span>
                     </div>
-                    <Row>
-                        <Col s={12}>
-                            <Button
-                                node="button"
-                                style={{
-                                background: '#23232e',
-                                marginTop: '15px'
-                                }}
-                                waves="light"
-                            >Nova Liga </Button>   
-                        </Col>
-                    </Row>
 
                     <div className='box-content'>
-                        <Item
-                            name='Nome da Liga'
-                            start='2020-10-05'
-                        />
+                        <Row>
+                            <Col s={12} style={{ textAlign: 'right' }}>
+                                <Button
+                                    node="button"
+                                    style={{
+                                    background: '#23232e',
+                                    marginTop: '15px'
+                                    }}
+                                    waves="light"
+                                >Nova Liga </Button>   
+                            </Col>
+                        </Row>
 
-                        <Item
-                            name='Nome da Liga'
-                            start='2020-10-05'
-                        />
-
-                        <Item
-                            name='Nome da Liga'
-                            start='2020-10-05'
-                        />
-
-                        <Item
-                            name='Nome da Liga'
-                            start='2020-10-05'
-                        />
+                        {
+                            ligas.map((item) => {
+                                return (
+                                    <Item 
+                                        name={item.name}
+                                        start={item.start}
+                                        key={item.id}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

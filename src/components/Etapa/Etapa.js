@@ -1,14 +1,36 @@
 import React, { Component } from "react";
+import { Row, Col, Button } from 'react-materialize';
+import Item from './Item';
 import './Etapa.css';
 
 class Etapa extends Component
 {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            etapas: [
+                {
+                    id: 0,
+                    name:'4 Etapa Liga Modern de Magic',
+                    location:'Joker Games',
+                    data:'10-05-2020',
+                    start:'08:00',
+                    champion:'Franco Nascimento',
+                },
+                {
+                    id: 1,
+                    name:'4 Etapa Liga Modern de Magic',
+                    location:'Joker Games',
+                    data:'10-05-2020',
+                    start:'08:00',
+                    champion:'Franco Nascimento',
+                }
+            ]
+        };
     }
 
     render() {
+        const { etapas } = this.state;
         return (
             <div className='container-fluid'>
                 <div className='box'>
@@ -18,7 +40,35 @@ class Etapa extends Component
                             Etapa
                         </span>
                     </div>
-                    <div className='box-content'>Content</div>
+                    <div className='box-content'>
+                        <Row>
+                            <Col s={12} style={{ textAlign: 'right' }}>
+                                <Button
+                                    node="button"
+                                    style={{
+                                    background: '#23232e',
+                                    marginTop: '15px'
+                                    }}
+                                    waves="light"
+                                >Nova Etapa </Button>   
+                            </Col>
+                        </Row>
+                        
+                        {etapas.map((item) => {
+                            return (
+                                <Item 
+                                    title
+                                    name={ item.name }
+                                    location={ item.location }
+                                    data={ item.data}
+                                    start={item.start}
+                                    champion={item.champion}
+                                    key={item.id}
+                                />
+                            )
+                        })}
+
+                    </div>
                 </div>
             </div>
         )

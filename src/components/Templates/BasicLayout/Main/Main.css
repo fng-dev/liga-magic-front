@@ -141,6 +141,7 @@
     border-left: 5px solid var(--bg-primary);
     border-radius: 5px;
     padding: 0;
+    margin-bottom: 80px;
   }
 
   .box-title {
@@ -155,6 +156,7 @@
 
   .box-title svg {
     width: 30px;
+    height: 30px;
     margin: 0 15px;
   }
 
@@ -162,6 +164,20 @@
     color: var(--text-primary);
     padding: 11px;
   }
+
+  .line-item{
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #424248;
+    border-left: 20px solid #424248;
+    margin-top: 15px;
+  }
+
+  .champion {
+    border: 2px solid goldenrod;
+    border-left: 20px solid goldenrod;
+  }
+
 
   
   /* Small screens */
@@ -186,6 +202,17 @@
   
     main {
       margin: 0;
+    }
+
+    .line-item .row div:first-child {
+      max-width: 15ch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .line-item .row .col span{
+      display: none;
     }
   }
   
