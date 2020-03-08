@@ -16,7 +16,7 @@ class Player extends Component {
                     email:'email@email.com',
                 },
                 {
-                    id:0,
+                    id:1,
                     name:'Marcos Vinicius',
                     dci:'1234562252',
                     email:'email@email.com',
@@ -56,7 +56,7 @@ class Player extends Component {
                                         name={item.name}
                                         dci={item.dci}
                                         email={item.email}
-                                        key={item.key}
+                                        key={item.id}
                                     />
                                 )
                             })
