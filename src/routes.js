@@ -12,7 +12,7 @@ const Routes = () => (
         <Switch>
             <PrivateRoutes exact path='/app' component={() => <h1>Route Logado!</h1>} />
             <Main>
-                <Route exact path="/" component={() => <h1>Main Component!</h1>}></Route>
+                <Route exact path="/" component={Liga}></Route>
                 <Route exact path="/liga" component={Liga}></Route>
                 <Route exact path="/etapa" component={Etapa}></Route>
                 <Route exact path="/player" component={Player}></Route>
